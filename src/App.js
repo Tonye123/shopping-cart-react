@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Nav from './Nav';
+import CartPage from './CartPage'
 import './App.css';
 import ItemPage from './ItemPage'
 import { items } from './static-data'
@@ -35,7 +36,7 @@ const Content = ({ tab, onAddToCart }) =>  {
     case'item':
       return <ItemPage items = {items} onAddToCart = {onAddToCart} />;
     case 'cart':
-      return <span>the cart</span>;
+      return <CartPage items = {items} />;
    
     
   }
