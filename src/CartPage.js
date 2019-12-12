@@ -3,10 +3,15 @@ import PropTypes from 'prop-types';
 import Item from './Item';
 import './CartPage.css'
 import { items } from './static-data';
+import Nav from './Nav'
 
 
 function CartPage({ items,onRemoveOne,onAddOne }) {
+   
+ 
     return(
+        <>
+        { items.length === 0 ? <div className="CartPage-empty">Your Cart is empty.</div> :
         <ul className="CartPage-items">
             {items.map(item => 
                 <li key={item.id} className="CartPage-item">
@@ -19,14 +24,19 @@ function CartPage({ items,onRemoveOne,onAddOne }) {
                         <button
                         className="CartItem-addOne"
                         onClick={()=> onAddOne(item)}>+</button>
+                        <div className="total"><b>Total:</b>${item.count * item.price}</div>
 
                       </div>
                         
                     </Item>
                 </li>)}
 
-        </ul>
+        </ul> }
+       
+
+        </>
     )
+
 }
 
 CartPage.propTypes = {

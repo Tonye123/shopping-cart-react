@@ -28,3 +28,17 @@
 .CartItem-removeOne {
     border-right: none;
 }
+
+.total {
+    padding-top: 10px;
+}
+
+.total b {
+    margin-right:10px;
+}
+
+.CartPage-empty{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

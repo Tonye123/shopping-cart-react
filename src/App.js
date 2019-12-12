@@ -26,6 +26,7 @@ function summarizedCart(cart) {
 function App() {
   const[activeTab, setActiveTab] = useState('items')
   const[cart, setCart] = useState([])
+  
 
   const addToCart = (item) => {
     setCart((cart) => [
@@ -52,7 +53,8 @@ function App() {
     <div className="App">
       <Nav 
        activeTab={activeTab}
-       onTabChange={setActiveTab}/>
+       onTabChange={setActiveTab}
+       cart = {summarizedCart(cart)} />
       <main className='App-content'>
         <Content tab={activeTab}
           onAddToCart = {addToCart}
