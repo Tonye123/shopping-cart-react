@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Item from './Item';
 import './CartPage.css'
-import { items } from './static-data';
-import Nav from './Nav'
+
 
 
 function CartPage({ items,onRemoveOne,onAddOne }) {

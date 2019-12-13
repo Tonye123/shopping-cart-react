@@ -3,6 +3,8 @@ import React from 'react'
 
 
 export default function Nav({activeTab,onTabChange,cart}) {
+    let totalPrice = cart.reduce((accum,item)=> accum + (item.price * item.count),0)
+    let totalCount = cart.reduce((accum,item)=> accum + item.count,0)
     const itemClass = tabName => `App-nav-item ${activeTab === tabName ? 'selected' : ''}`
     return (
         <nav className="App-nav">
@@ -14,7 +16,7 @@ export default function Nav({activeTab,onTabChange,cart}) {
     <button onClick={()=>onTabChange('cart')}>Cart</button>
                 </li>
                 <li className= "App-nav-item cartSum">
-                    {cart.length} items ()
+                    {totalCount} items (${totalPrice})
                 </li>
             </ul>
 
